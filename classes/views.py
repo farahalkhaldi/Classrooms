@@ -6,9 +6,9 @@ from .models import Classroom, Student
 from .forms import ClassroomForm, RegisterForm, SigninForm, StudentForm
 
 def register(request):
-    form = SignupForm()
+    form = RegisterForm()
     if request.method == 'POST':
-        form = SignupForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
 
